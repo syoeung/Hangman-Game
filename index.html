@@ -3,48 +3,57 @@
 
 <head>
 
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Hangman-Game</title>
+    <title>Zoo Animals Hangman</title> 
+
+	
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
+	<script src="assets/javascript/game.js"></script>
 
 </head>
-
 <body>
 
-    <div class="wrapper">
-        <h1> Zoo Animals Hangman</h1>
-        <h2>Guess the zoo animals</h2>
-    </div>
-
-   <div class="container">
-    <div id="word"></div>
-
-    <div> Letters Guessed: 
-        <div id="gussedLetters"></div>
-    </div>
-
-    <div id="remainingGusses">Guesses Remaining: 7 </div>
-    <div id="hint" style="display:none">Hint: All Animals are zoo animals .</div>
-    
-    <div id="imageArea">
-        <div id="hangman"><img src="assets/images/hangman-7.png" height='400'/> </div>
-    </div>
-
-   </div> 
 
 
+		<div class="wrapper">
+				<h1> Zoo Animals Hangman</h1>
+				<h2>Guess the zoo animal</h2>
+			</div>
 
+	
+		<div class="display">
+			<div id="randomWord"></div>
+			<br>
+			<div>Letters Guessed: 
+				<div id="guessed"></div>
+			</div>
+			<br>
+			<div id="remainingGuesses">Guesses Remaining: 7</div>
+			<div id="hint" style="display: none" >Hint:They are all zoo animals</div>
+		
+		
+			<div id="hangman"><img src="assets/images/hangman-7.png"  height='400' margin= "0 auto"/></div>
+		
+	</div>
 
+	<div id="footer">
+		<div class="footer"></div>
+			
+		</div>
+	</div>
 
-
-
-
-
+</div>
 
 </body>
-
-
 </html>
+
+
+
+
+
+
 
 
 
