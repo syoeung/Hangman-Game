@@ -1,6 +1,6 @@
 window.onload = function() {
 
-var words = ["lion","tiger","hippo","monkey","giraffe","gorilla","bear","snake","koala","alligator","turtle","cheetah","elephants"];
+var words = ["lion","tiger","hippo","monkey","giraffe","gorilla","bear","snake","koala","alligator","turtle","cheetah","elephant","penguin","llama","alpaca"];
 var guessesRemaining = 7;
 //generates random #, and assigns it to an item in the array, storing it in randomWord
 var randomWord = words[Math.floor((Math.random() * words.length))];
@@ -15,6 +15,7 @@ underScores();
 
 //listen for keypress, and run function
 document.addEventListener('keypress', function(event) {
+    
 
     //pushes key pressed into array of guessed letters
     letterGuess.push(String.fromCharCode(event.keyCode));
@@ -22,12 +23,12 @@ document.addEventListener('keypress', function(event) {
     //loop through random word's letters, checking against keypress
     for (var j = 0; j < randomWord.length; j++) {
         
-        //if any letter of randomWord is equal to the last letter pressed
+        //randomWord is equal to the last letter pressed
         if (randomWord[j] === letterGuess[letterGuess.length-1]) {
             
-            //tell me keypress matches character in randomWord (used for if/else later)
+            //keypress matches charcter
             trueFalse = true;
-            //tell me at what index the matching characters are at
+            //where the matching charcters are
             indexes.push(j);
             //change underScoreWord from string to array for looping
             var splitWord = underScoreWord.split("");
@@ -35,9 +36,9 @@ document.addEventListener('keypress', function(event) {
             //loop through splitWord array, and set matching indices to corresponding keypress
             for (k = 0; k < indexes.length; k++) {
                 splitWord[indexes[k]] = letterGuess[letterGuess.length-1];
-                //reset indexes array to nothing, so we can loop through again later
+                //reset aray
                 indexes = [];
-                //rejoin underScoreWord as string for display
+                //display UnderScoreWord
                 underScoreWord = splitWord.join("");
             }
         } 
@@ -53,25 +54,25 @@ document.addEventListener('keypress', function(event) {
 
     } else {
         // If keypress has no matches, lower guesses by 1
-        guessesRemaining--
+        guessesRemaining --
         //display letters guessed
         document.getElementById('guessed').innerHTML = letterGuess;
         //display remaining chances
         document.getElementById('remainingGuesses').innerHTML = "Guesses Remaining: " + guessesRemaining;
     }
 
-    //reset trueFals to false, to restart entire process
+    
     trueFalse = false;
-    //call function to determine win/lose (see below)
+    
     checkWin();
-    //call function for appropriate image, depending on state of missed guesses
+    
     images();
     
 });
 
 
 
-//converts randomWord into string of underscores of matching length
+//randomWords into strings
 function underScores() {
     for (var i = 0; i < randomWord.length; i++) {
         underScoreWord += "_";
@@ -79,22 +80,23 @@ function underScores() {
     document.getElementById('randomWord').innerHTML = underScoreWord;
 }
 
-//checks to see if player wins or loses, and alerts the answer
+//checks to see if player wins or loses and then reset page upon confirm
 function checkWin() {
     if (underScoreWord === randomWord) {
-            alert("Congratulations You Win !!");
+            alert("You Win !! The word was indeed "+ randomWord + " ." );
             {window.location.reload();};
             
             
         } else if (guessesRemaining === 0) {
-            alert("Unfortunately you lost , visit your local zoo and try again .");
+            
+            alert("Unfortunately the word was " + randomWord +  " , visit your local zoo and then try again .");
+            // Reloads the page
             {window.location.reload();};
-            document.getElementById('randomWord').innerHTML = randomWord;
             
         }
 }   
 
-//calls specific image related to # of guess remaining
+//add images depending on number of guesses remaining
 function images(){
     if (guessesRemaining === 6) {
         document.getElementById('hangman').innerHTML = "<img src=assets/images/hangman-6.png height='400'/>";
@@ -118,6 +120,8 @@ function images(){
         document.getElementById('hangman').innerHTML = "<img src=assets/images/hangman-0.png height='400'/>";   
     }
 }
+
+
 
 
 }
