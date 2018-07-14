@@ -1,0 +1,40 @@
+h1{
+    font-family:"Arial Black";
+}
+
+body{
+    background-color: lightblue; 
+}
+
+p{
+    color: gray;
+}
+
+h1,h2,h3,h4{
+    color:rgb(233, 154, 6);
+}
+
+.secrets{
+    margin: 0 auto;
+    border: 6px solid gray;
+ }
+
+ .countingStars{
+    margin: 0 auto;
+    border: 6px solid gray;   
+ }
+ 
+ .allTheRightThings{
+    margin: 0 auto;
+    border: 6px solid gray;
+ }
+
+ .LoseMySelf{
+    margin: 0 auto;
+    border: 6px solid gray;
+ }
+
+ ul{
+     color: gray;
+ }
+

@@ -1,0 +1,40 @@
+p{
+    color:black;
+}
+
+p.red{
+    color: red;
+}
+
+p.blue{
+    color: blue;
+}
+
+p.green{
+    color: green;
+}
+
+p.big{
+ font-size: 50px;  
+}
+
+p.tiny{
+    font-size: 12px;
+}
+
+p.Impact{
+    font-family: "Impact"
+}
+
+p.BigBoldOrange{
+    font-size: 40px;
+    color:orange;
+}
+
+p.styledFont{
+    color:green;
+}
+
+img{
+    border: 6px solid orange
+}
